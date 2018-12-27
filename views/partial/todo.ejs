@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<style media="screen">
+body{
+    background: #0d1521;
+    font-family: tahoma;
+    color: #989898;
+}
+
+#todo-table{
+    position: relative;
+    width: 95%;
+    background: #090d13;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#todo-table form:after{
+    margin: 0;
+    content: '';
+    display: block;
+    clear: both;
+}
+
+input[type="text"]{
+    width: 70%;
+    padding: 20px;
+    background:#181c22;
+    border: 0;
+    float: left;
+    font-size: 20px;
+    color: #989898;
+}
+
+button{
+    padding: 20px;
+    width: 30%;
+    float: left;
+    background: #23282e;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: arial;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+li:hover{
+    text-decoration: line-through;
+    background: rgba(0,0,0,0.2);
+}
+
+h1{
+    background: url(/logo.png) no-repeat center;
+    margin-bottom: 0;
+    text-indent: -10000px;
+}
+
+</style>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= data.job%></title>
+    <link rel="stylesheet" href="/stuff/style.css">
+  </head>
+  <body>
+      <h1><%include partial/nav.ejs%></h1>
+    <div id="todo-table">
+      <form method="post">
+        <input type="text" name="job" placeholder="cập nhật tiến độ:...">
+        <input type="text" name="date" placeholder="ngày">
+        <button type="submit" name="button">Cập nhật </button>
+      </form>
+      <ul>
+      <%for(i=0;i<data.length;i++){%>
+    <li> <strong><%=data[i].date%></strong>:<strong><%=data[i].job%><strong></li>
+    <%}%>
+      </ul>
+    </div>
+    '<script src="{process.env.BROWSER_REFRESH_URL}"></script>'
+  </body>
+</html>
