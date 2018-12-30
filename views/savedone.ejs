@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <style media="screen">
 body{
     background: #0d1521;
@@ -70,28 +71,21 @@ h1{
     margin-bottom: 0;
 
 }
-
 </style>
-<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title><%= data.name%></title>
-    <link rel="stylesheet" href="/stuff/style.css">
-  </head>
-  <body>
+    <title></title>
+    <head>
+      <meta charset="utf-8">
+      <title></title>
+    </head>
       <h1><%include partial/nav.ejs%></h1>
-    <div id="todo-table">
-      <form method="post">
-        <input type="text" name="job" placeholder="cập nhật tiến độ:...">
-        <input type="text" name="date" placeholder="ngày">
-        <button type="submit" name="button">Cập nhật </button>
-      </form>
-      <ul>
-      <%for(i=0;i<data.todolist.length;i++){%>
-    <li> <strong><%=data.todolist[i].date%></strong>:<strong><%=data.todolist[i].job%><strong></li>
-    <%}%>
-      </ul>
-    </div>
-    '<script src="{process.env.BROWSER_REFRESH_URL}"></script>'
-  </body>
-</html>
+    <body>
+   <p>
+   <div id="todo-table" >
+     <ul>
+       <li>Đã lưu người dùng <%=data.name%></li>
+     </ul>
+   </div></p>
+    </body>
+  </html>

@@ -1,9 +1,43 @@
 <!DOCTYPE html>
 <html>
+<style media="screen">
+body{
+    background: #0d1521;
+    font-family: tahoma;
+    color: #989898;
+}
+
+#todo-table{
+    position: relative;
+    width: 95%;
+    background: #090d13;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#todo-table form:after{
+    margin: 0;
+    content: '';
+    display: block;
+    clear: both;
+}
+li{
+  font-family: tahoma;
+  color: #989898;
+}
+h1{
+      background: rgba(0,0,0,0.2);
+    margin-bottom: 0;
+
+}
+
+</style>
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
+    <button><li><a href="todo/<%=data.name%>">To-do</a></button>
     <h1><%include partial/nav.ejs%></h1>
   <body>
  <h1><%=data.name%></h1>

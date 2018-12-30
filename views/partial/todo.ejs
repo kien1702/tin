@@ -87,8 +87,8 @@ h1{
         <button type="submit" name="button">Cập nhật </button>
       </form>
       <ul>
-      <%for(i=0;i<data.length;i++){%>
-    <li> <strong><%=data[i].date%></strong>:<strong><%=data[i].job%><strong></li>
+      <%for(i=1;i<=data.todolist.length;i++){%>
+    <li> <strong><%=data.todolist[i]date%></strong>:<strong><%=data.todolist[i].job%><strong></li>
     <%}%>
       </ul>
     </div>

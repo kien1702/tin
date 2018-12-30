@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <style media="screen">
 body{
     background: #0d1521;
@@ -69,29 +70,20 @@ h1{
       background: rgba(0,0,0,0.2);
     margin-bottom: 0;
 
-}
-
-</style>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title><%= data.name%></title>
-    <link rel="stylesheet" href="/stuff/style.css">
-  </head>
-  <body>
-      <h1><%include partial/nav.ejs%></h1>
-    <div id="todo-table">
-      <form method="post">
-        <input type="text" name="job" placeholder="cập nhật tiến độ:...">
-        <input type="text" name="date" placeholder="ngày">
-        <button type="submit" name="button">Cập nhật </button>
-      </form>
-      <ul>
-      <%for(i=0;i<data.todolist.length;i++){%>
-    <li> <strong><%=data.todolist[i].date%></strong>:<strong><%=data.todolist[i].job%><strong></li>
-    <%}%>
-      </ul>
-    </div>
-    '<script src="{process.env.BROWSER_REFRESH_URL}"></script>'
-  </body>
+}</style>
+</head>
+  <h1><%include partial/nav.ejs%></h1>
+<body>
+<h1>tạo người dùng</h1>
+<p>
+<div id="todo-table" >
+ <form method="post">
+   <input type="text" name="name" placeholder="nhập tên">
+   <input type="text" name="mark" placeholder="điểm hiện tại">
+   <input type="text" name="todolist.job" placeholder="nhập chủ đề">
+   <input type="text" name="todolist.date" placeholder="ngày 1">
+   <button type="submit" name="button">Cập nhật </button>
+ </form>
+</div></p>
+</body>
 </html>
